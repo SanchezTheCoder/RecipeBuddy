@@ -194,12 +194,11 @@ class RecipeViewModel: ObservableObject {
     
     private var totalCost: Double = 0
     private var apiKey: String {
-        do {
-            return try KeychainManager.getAPIKey()
-        } catch {
-            print("DEBUG: Failed to get API key:", error)
+        guard let key = KeychainManager.getApiKey() else {
+            print("DEBUG: Failed to get API key")
             return ""
         }
+        return key
     }
     
     private var currentModel: RecipeModel {
