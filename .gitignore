@@ -1,0 +1,16 @@
+# Xcode
+.DS_Store
+xcuserdata/
+*.xcworkspace/
+DerivedData/
+build/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# Environment variables
+.env
+
+# API Keys and secrets
+KeychainManager.swift
